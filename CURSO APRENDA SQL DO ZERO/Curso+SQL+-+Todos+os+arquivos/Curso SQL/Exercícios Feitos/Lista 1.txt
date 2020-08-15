@@ -1,0 +1,154 @@
+Microsoft Windows [versão 10.0.10240]
+(c) 2015 Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\Wesley>cd desktop
+
+C:\Users\Wesley\Desktop>sqlite3 lista1.sqlite
+SQLite version 3.33.0 2020-08-14 13:23:32
+Enter ".help" for usage hints.
+sqlite> create table alunos (codigo integer, nome text, cidade text);
+sqlite> .tables;
+Error: unknown command or invalid arguments:  "tables;". Enter ".help" for help
+sqlite> .tables
+alunos
+sqlite> create table alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100);
+Error: near ";": syntax error
+sqlite> create table alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+sqlite> create table funcionarios(nome text, endereço text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereço text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+sqlite> .exit
+
+C:\Users\Wesley\Desktop>.tables
+'.tables' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\Users\Wesley\Desktop>sqlite3
+SQLite version 3.33.0 2020-08-14 13:23:32
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> use lista1.sqlite
+   ...> ;
+Error: near "use": syntax error
+sqlite> open list1.sqlite;
+Error: near "open": syntax error
+sqlite> .open lista1.sqlite
+sqlite> .tables
+alunos        alunos2       funcionarios
+sqlite> create table fornecedores(nome text, endereco text, telefone text, cidade text, estado text, estado text, cep text, cnpj text, email text);
+Error: duplicate column name: estado
+sqlite> create table fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+sqlite> .tables
+alunos        alunos2       fornecedores  funcionarios
+sqlite> create table livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereço text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+sqlite> alter table funcionarios rename endereço to endereco;
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereco text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+sqlite> CREATE TABLE estoque(codigo integer, nomedoproduto text, categoria text, quantidade integer, fornecedor text);
+sqlite> CREATE TABLE notas(codigo integer nomedoaluno text, 1bim double, 2bim double, 3bim double, 4bim double);
+Error: unrecognized token: "1bim"
+sqlite> CREATE TABLE notas(codigo integer, nomedoaluno text, 1bim double, 2bim double, 3bim double, 4bim double);
+Error: unrecognized token: "1bim"
+sqlite> CREATE TABLE notas(codigo integer, nomedoaluno text, tb_1bim double,tb_2bim double, tb_3bim double, tb_4bim double);
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereco text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+CREATE TABLE estoque(codigo integer, nomedoproduto text, categoria text, quantidade integer, fornecedor text);
+CREATE TABLE notas(codigo integer, nomedoaluno text, tb_1bim double,tb_2bim double, tb_3bim double, tb_4bim double);
+sqlite> CREATE TABLE caixa(codigo integer, data date, descricao text,debito double, credito double);
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereco text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+CREATE TABLE estoque(codigo integer, nomedoproduto text, categoria text, quantidade integer, fornecedor text);
+CREATE TABLE notas(codigo integer, nomedoaluno text, tb_1bim double,tb_2bim double, tb_3bim double, tb_4bim double);
+CREATE TABLE caixa(codigo integer, data date, descricao text,debito double, credito double);
+sqlite> CREATE TABLE contasAPagar(codigo integer, data_conta date, descricao text, valor double, data_pagamento date);
+sqlite> CREATE TABLE contasAReceber(codigo integer, data_conta date, descricao text, valor double, data_recebimento date);
+sqlite> .schmea
+Error: unknown command or invalid arguments:  "schmea". Enter ".help" for help
+sqlite> .schema
+CREATE TABLE alunos (codigo integer, nome text, cidade text);
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereco text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+CREATE TABLE estoque(codigo integer, nomedoproduto text, categoria text, quantidade integer, fornecedor text);
+CREATE TABLE notas(codigo integer, nomedoaluno text, tb_1bim double,tb_2bim double, tb_3bim double, tb_4bim double);
+CREATE TABLE caixa(codigo integer, data date, descricao text,debito double, credito double);
+CREATE TABLE contasAPagar(codigo integer, data_conta date, descricao text, valor double, data_pagamento date);
+CREATE TABLE contasAReceber(codigo integer, data_conta date, descricao text, valor double, data_recebimento date);
+sqlite> CREATE TABLES filmes(codigos integer, nome text, sinopse text, categoria text, diretor text);
+Error: near "TABLES": syntax error
+sqlite> CREATE TABLE filmes(codigos integer, nome text, sinopse text, categoria text, diretor text);
+sqlite> CREATE TABLE cds (codigo integer, nome text, cantor text, ano text, quantidadeDeMusicas integer);
+sqlite> DROP TABLE alunos;
+sqlite> .schema
+CREATE TABLE alunos2(codigo integer, nome varchar(200),telefone varchar(50), cidade varchar(100));
+CREATE TABLE funcionarios(nome text, endereco text,telefone text, cidade text, estado text, cep text,rg text, cpf text,salario double);
+CREATE TABLE fornecedores(nome text, endereco text, telefone text, cidade text, estado text, cep text, cnpj text, email text);
+CREATE TABLE livros(codigo integer, nome text,categoria text, resumo text, precocusto double, precovenda double);
+CREATE TABLE estoque(codigo integer, nomedoproduto text, categoria text, quantidade integer, fornecedor text);
+CREATE TABLE notas(codigo integer, nomedoaluno text, tb_1bim double,tb_2bim double, tb_3bim double, tb_4bim double);
+CREATE TABLE caixa(codigo integer, data date, descricao text,debito double, credito double);
+CREATE TABLE contasAPagar(codigo integer, data_conta date, descricao text, valor double, data_pagamento date);
+CREATE TABLE contasAReceber(codigo integer, data_conta date, descricao text, valor double, data_recebimento date);
+CREATE TABLE filmes(codigos integer, nome text, sinopse text, categoria text, diretor text);
+CREATE TABLE cds (codigo integer, nome text, cantor text, ano text, quantidadeDeMusicas integer);
+sqlite> .tables
+alunos2         contasAPagar    filmes          livros
+caixa           contasAReceber  fornecedores    notas
+cds             estoque         funcionarios
+sqlite> DROP TABLES livros;
+Error: near "TABLES": syntax error
+sqlite> DROP TABLE livro;
+Error: no such table: livro
+sqlite> DROP TABLE livros;
+sqlite> .tables
+alunos2         cds             contasAReceber  filmes          funcionarios
+caixa           contasAPagar    estoque         fornecedores    notas
+sqlite> DROP TABLE contasAPagar;
+sqlite> DROP TABLE contasAReceber;
+sqlite> DROP TABLE filmes;
+sqlite> .tables
+alunos2       cds           fornecedores  notas
+caixa         estoque       funcionarios
+sqlite> ALTER TABLE alunos2 rename to super_alunos;
+sqlite> .tables
+caixa         estoque       funcionarios  super_alunos
+cds           fornecedores  notas
+sqlite> ALTER TABLE estoque RENAME TO produtos;
+sqlite> .tables
+caixa         fornecedores  notas         super_alunos
+cds           funcionarios  produtos
+sqlite> ALTER TABLE notas RENAME TO aprovados;
+sqlite> .tables
+aprovados     cds           funcionarios  super_alunos
+caixa         fornecedores  produtos
+sqlite>
+sqlite> ALTER TABLE aprovados RENAME TO notas;
+sqlite> .tables
+caixa         fornecedores  notas         super_alunos
+cds           funcionarios  produtos
+sqlite>
